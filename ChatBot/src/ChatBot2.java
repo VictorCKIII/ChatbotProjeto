@@ -7,13 +7,14 @@ public class ChatBot2 {
         System.out.println("........");
         System.out.println("Olá, como você se chama?");
         String nome = input.next();
-        System.out.println("Olá," + nome +" me chamo Geralt e você acaba de se juntar a sociedade dos bruxos,mas antes você precisará escolher em qual tipo de magia se especializar")
+        System.out.println("Olá," + nome +" me chamo Geralt e você acaba de se juntar a sociedade dos bruxos,mas antes você precisará escolher em qual tipo de magia se especializar");
+        System.out.println("Só existem 2 tipos de magia: Fogo e Água");
         ;
         System.out.println("Sim, eu sei que você deve estar confuso, mas resumindo, você morreu e reencarnou aqui :) ");
         System.out.println("Então, qual o tipo de magia você escolhe?");
         String magia = input.next();
 
-        if(magia.equals("Fogo")){
+        if(magia.equalsIgnoreCase("Fogo")){
             System.out.println("Hm, uma magia deveras interessante mas um pouco complexa de se usar");
             System.out.println("Deseja continuar mesmo assim?");
             String escolha = input.next();
@@ -71,18 +72,23 @@ public class ChatBot2 {
 
 
 
-        }else if(magia.equals("Ar")) {
+        }else {
             System.out.println("Hm, uma magia que você poderá utilizar facilmente, porém, dependendo do oponente ela não terá a menor eficácia deseja mesmo assim?");
+            System.out.println("Deseja continuar mesmo assim ? ");  
+            String escolha1 = input.next();
+            if(escolha1.equalsIgnoreCase("Sim")) {
+                System.out.println("Meus parabéns, você agora possui a magia da água e com ela veio junto este pequeno golfinho para ser seu pet");
 
-        }else if(magia.equals("Terra")) {
-            System.out.println("Hm, assim como o Ar, essa magia é fácil de usar, mas dependendo do oponente não fará nenhum efeito, deseja usar mesmo assim ?");
+            }else{
+                System.out.println("Ah, que pena, tente escolher outra se apresentando novamente :) ");
+            }
 
-        }else if(magia.equals("Água")) {
-            System.out.println("Hm, ótima escolha, essa magia consegue se destacar em combate contra todas as outras, apenas contra o Ar que acaba deixando um pouco a desejar! Deseja escolher mesmo assim?    ");
-        }
+
+        
        
         
        
 
     }
+}
 }
