@@ -46,31 +46,15 @@ public class ChatBot2 {
                         } else {
                             System.out.println("Você ficou para lutar e ajudar os outros, mas sua falta de experiência em batalha lhe custou a vida e você morreu depois de levar uma pedrada na cabeça ! Sua jornada acaba aqui !");
                         }
-
-                }       
-                        
-
-
+                }                            
                 }
 
                 }
-            
-
-
-            
+         
             else{
                 System.out.println("Ah, que pena! Tente escolher outra depois de se apresentar novamente :) ");
             
             }
-
-
-
-
-
-
-
-
-
 
         }else {
             System.out.println("Hm, uma magia que você poderá utilizar facilmente, porém, dependendo do oponente ela não terá a menor eficácia deseja mesmo assim?");
@@ -78,17 +62,31 @@ public class ChatBot2 {
             String escolha1 = input.next();
             if(escolha1.equalsIgnoreCase("Sim")) {
                 System.out.println("Meus parabéns, você agora possui a magia da água e com ela veio junto este pequeno golfinho para ser seu pet");
+                System.out.println("Agora, existe um ritual que após receber a magia da água você deve nadar no lago sagrado. Ninguém nunca deixou de nadar nesse lago após a benção da magia!");
+                System.out.println("Você deseja ir nadar ?");
+                String nadar = input.next();
+                if(nadar.equalsIgnoreCase("Sim")) {
+                    System.out.println("Ótimo, você acabou se fortalecendo ainda mais e seu pet acabou de evoluir para um Tubarão que tem consciência e consegue se comunicar com humanos");
+                    System.out.println("OBS: Ele deseja ser chamado de Tutubarão agora...");
+                    System.out.println("Vocês foram convocados pelo rei para tentar lidar com um monstro que tem matado muitos camponeses recentemente");
+                    System.out.println("Você deseja ir até o rei?");
+                    String ida = input.next();
+                    if(ida.equalsIgnoreCase("Sim")) {
+                        System.out.println("Era uma armadilha, o rei não gosta de bruxos e nunca gostou. Você acabou morrendo envenenado com um copo de vinho ! A sua jornada acaba aqui ");
+                        
+                    } else {
+                        System.out.println("Você optou por não ir, e o rei se sentiu ofendido e acabou mandando o exército para o castelo dos bruxos !");
+                        System.out.println("Os bruxos por sua vez não queriam arrumar briga e entregaram você para o rei. O rei decaptou você naquela mesma tarde! A sua jornada acaba aqui");
+                    }
 
-            }else{
+                }else {
+                    System.out.println("Você não nadou e acabou sendo morto pelos espíritos das águas pela falta de respeito que você teve com o ritual. Sua jornada acaba aqui !");
+                }
+            }         
+                    
+            else{
                 System.out.println("Ah, que pena, tente escolher outra se apresentando novamente :) ");
             }
-
-
-        
-       
-        
-       
-
     }
 }
 }
