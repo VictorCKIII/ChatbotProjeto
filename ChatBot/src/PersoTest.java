@@ -26,7 +26,7 @@ public class PersoTest {
         }
         else if(this.stamina < 0){
             this.stamina = 0 ;
-            System.out.println(this.nome + " Acabou tendo seus ovos arrancados e logo após, acorda de sua cirurgia de ciso");
+            System.out.println(this.nome);
         }
     }
     }
