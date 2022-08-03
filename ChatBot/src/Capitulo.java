@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.print.DocFlavor.STRING;
+
 public class Capitulo {
 
     String nome;
@@ -8,13 +10,14 @@ public class Capitulo {
     String escolha2;
     PersoTest personagem;
     int deltaStamina;
+    Scanner input ;
 
   Capitulo(String nome,
            String texto,
            String escolha1,
            String escolha2,
         PersoTest personagem,
-        int deltaStamina)
+        int deltaStamina, Scanner input)
 
 {
     this.nome = nome ;
@@ -23,6 +26,7 @@ public class Capitulo {
     this.escolha2 = escolha2;
     this.personagem = personagem;
     this.deltaStamina = deltaStamina;
+    this.input = input;
 
 
 }    
@@ -34,26 +38,23 @@ void  mostrar()
   this.personagem.deltaStamina(this.deltaStamina);
 }
 
-//int escolher()
+int escolhendo()
+{
+  int escolhendo1 = -1;
 
-  //int op = - 1;
+  if(this.escolha1 != null || this.escolha2 != null)
+  {
+    String tomo = input.nextLine();
+    if(tomo.equalsIgnoreCase(escolha1)) {
+      escolhendo1 = 1;
+    }
+    else if(tomo.equalsIgnoreCase(escolha2)){
+      escolhendo1 = 2;
+    }
+  }
 
-  //if(escolha1 != null || escolha2 != null )
-  
-    //Scanner input = new Scanner(System.in);
-   // int  escolhap  = input.nextInt();
-    //  if(escolhap.equals(escolha1))
-    //  {
-    //    op = 1;
-     // }
-     // else if (escolhap.equals(escolha2))
-     // {
-     //   op =2 ;
-     // }
-     // input.close();
-  //}
+  return escolhendo1;
+}
 
-
-  //return op;
 }
 
