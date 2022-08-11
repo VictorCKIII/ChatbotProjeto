@@ -15,24 +15,42 @@ public class ChatBot2 {
         PersoTest perso = new PersoTest("Bilirio",100);
         PersoTest perso2 = new PersoTest("Bilirinho", 100);
         
+        String[] escolhasCap1 = new String[2];
+        escolhasCap1[0] = "Fogo";
+        escolhasCap1[1] = "Água";
         
        if(escolhap == 1) {
        
-        Capitulo cap1 = new Capitulo("Escolhendo suas Magias", "Neste mundo possuímos 2 tipos de magias: Fogo e Água! Escolha entre Fogo e Água  ", "Fogo", "Água",perso, 100,input);
-        cap1.mostrar();
+        Capitulo cap1 = new Capitulo("Escolhendo suas Magias",
+         "Neste mundo possuímos 2 tipos de magias: Fogo e Água! Escolha entre Fogo e Água  ",
+         escolhasCap1,
+           perso,
+            100,
+            input);
+            cap1.escolhendo();
+            cap1.mostrar();
         String magia = input.next();
-
+        String[] escolhasCap2 = new String[2];
+        escolhasCap2[0] = "Upar";
+        escolhasCap2[1] = "Castelo";
         if(magia.equalsIgnoreCase("Fogo")){
             System.out.println("Hm, uma magia deveras interessante mas um pouco complexa de se usar");
             System.out.println("Deseja continuar mesmo assim?");
-            String escolha = input.next();
-            if(escolha.equalsIgnoreCase("Sim")){
-                Capitulo cap2 = new Capitulo("PRIMEIRA ESCOLHA ", "VOCÊ POSSUI A MAGIA DE FOGO! Agora, escolha entre Upar e Castelo", "Upar", "Castelo", perso, 50,input);
+            String escolha = input.next();       
+         if(escolha.equalsIgnoreCase("Sim")){
+                Capitulo cap2 = new Capitulo("PRIMEIRA ESCOLHA ",
+                 "VOCÊ POSSUI A MAGIA DE FOGO! Agora, escolha entre Upar e Castelo",
+                  escolhasCap2,
+                    perso,
+                     50,
+                     input);
+                cap2.escolhendo();
                 cap2.mostrar();
-               System.out.println("- Upar");
-               System.out.println("- Castelo");
+                
                 String lugar  = input.next();
-               
+                String[] escolhascap3 = new String[2];
+                escolhascap3[0] = "Sim";
+                escolhascap3[1] = "Não";
                 if(lugar.equalsIgnoreCase("Upar")) {
                     System.out.println("Você foi upar, acabou encontrando um boss e acabou morrendo. Sua jornada acaba aqui :) ");
                     perso.deltaStamina(-100);
@@ -40,10 +58,14 @@ public class ChatBot2 {
                 else if (lugar.equalsIgnoreCase("Castelo")) {
                     System.out.println("Boa escolha, você não podia sair pois estava sem armadura, quase ia me esqueçendo !");
                     perso.deltaStamina(+50);
-                    Capitulo cap3 = new Capitulo("BEBENDO POÇÃO", "VOCÊ ESTÁ PRESTES A BEBER A POÇÃO!", "Sim","Não", perso,0,input);
+                    Capitulo cap3 = new Capitulo("BEBENDO POÇÃO",
+                     "VOCÊ ESTÁ PRESTES A BEBER A POÇÃO!",
+                      escolhascap3,
+                       perso,
+                       0,
+                       input);
                     cap3.mostrar(); 
-                    System.out.println(" - Sim");
-                    System.out.println(" - Não");
+                    cap3.escolhendo();
                     String pot = input.next();
                     if(pot.equalsIgnoreCase("Sim")) {
                         System.out.println("Você não resistiu aos efeitos colaterais da poção e morreu ali mesmo. Sua jornada acaba aqui !");
@@ -65,8 +87,16 @@ public class ChatBot2 {
             System.out.println("Hm, uma magia que você poderá utilizar facilmente, porém, dependendo do oponente ela não terá a menor eficácia deseja mesmo assim?");
             System.out.println("Deseja continuar mesmo assim ? ");  
             String escolha1 = input.next();
+            String[] escolhacap4 = new String[2];
+            escolhacap4[0] = "Sim";
+            escolhacap4[1] = "Não";
             if(escolha1.equalsIgnoreCase("Sim")) {
-                Capitulo cap5 = new Capitulo("CAPÍTULO 5", "RITUAL DA ÁGUA", "Sim ", "Não", perso , -50,input);
+                Capitulo cap5 = new Capitulo("CAPÍTULO 5",
+                 "RITUAL DA ÁGUA",
+                  escolhacap4,
+                    perso,
+                     -50,
+                     input);
 
                 String nadar = input.next();
                 if(nadar.equalsIgnoreCase("Sim")) {
@@ -175,7 +205,6 @@ public class ChatBot2 {
                         System.out.println("Você optou por não ir, e o rei se sentiu ofendido e acabou mandando o exército para o castelo dos bruxos !");
                         System.out.println("Os bruxos por sua vez não queriam arrumar briga e entregaram você para o rei. O rei decaptou você naquela mesma tarde! A sua jornada acaba aqui");
                     }
-
                 }else {
                     System.out.println("Você não nadou e acabou sendo morto pelos espíritos das águas pela falta de respeito que você teve com o ritual. Sua jornada acaba aqui !");
                 }
@@ -186,5 +215,3 @@ public class ChatBot2 {
             }*/
     } }
     }
-
-

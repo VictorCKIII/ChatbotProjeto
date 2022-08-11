@@ -1,33 +1,32 @@
 import java.util.Scanner;
 
+import javax.annotation.processing.SupportedOptions;
 import javax.print.DocFlavor.STRING;
 
 public class Capitulo {
 
     String nome;
     String texto;
-    String escolha1;
-    String escolha2;
+    String [] escolhas;
     PersoTest personagem;
     int deltaStamina;
-    Scanner input ;
+    Scanner input;
+    
 
   Capitulo(String nome,
            String texto,
-           String escolha1,
-           String escolha2,
+           String[] escolhas,
         PersoTest personagem,
         int deltaStamina, Scanner input)
 
 {
     this.nome = nome ;
     this.texto =  texto;
-    this.escolha1 = escolha1;
-    this.escolha2 = escolha2;
+    this.escolhas = escolhas;
     this.personagem = personagem;
     this.deltaStamina = deltaStamina;
     this.input = input;
-
+    
 
 }    
 void  mostrar()
@@ -36,24 +35,38 @@ void  mostrar()
   System.out.println(this.nome);
   System.out.println(this.texto);
   this.personagem.deltaStamina(this.deltaStamina);
+    
+  if(this.escolhas != null)
+  {
+    for (String abacate : escolhas) 
+    {
+      System.out.println(abacate);
+    }
+  }
 }
 
 int escolhendo()
 {
-  int escolhendo1 = -1;
+  int idEscolha = -1;
+  if(escolhas != null)
+  {     
+    System.out.println("Digite sua escolha: ");
+      String escolhaDigitada = input.nextLine();
 
-  if(this.escolha1 != null || this.escolha2 != null)
-  {
-    String tomo = input.nextLine();
-    if(tomo.equalsIgnoreCase(escolha1)) {
-      escolhendo1 = 1;
+    for (int i = 0; i < escolhas.length; i++) {
+      if(escolhaDigitada.equals(escolhas[i]))
+        {
+          idEscolha = i;
+        }
+       
     }
-    else if(tomo.equalsIgnoreCase(escolha2)){
-      escolhendo1 = 2;
-    }
+      int   idAtual = 0; 
+      
+    
   }
-
-  return escolhendo1;
+  
+  
+  return idEscolha;   
 }
 
 }
