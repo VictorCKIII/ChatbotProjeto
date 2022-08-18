@@ -1,31 +1,31 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.annotation.processing.SupportedOptions;
 import javax.print.DocFlavor.STRING;
 
-public class Capitulo {
+public class Capitulos {
 
     String nome;
     String texto;
-    String [] escolhas;
+    ArrayList<Escolha> escolhas;
     PersoTest personagem;
     int deltaStamina;
     Scanner input;
     
 
-  Capitulo(String nome,
+  Capitulos(String nome,
            String texto,
-           String[] escolhas,
         PersoTest personagem,
         int deltaStamina, Scanner input)
 
 {
     this.nome = nome ;
     this.texto =  texto;
-    this.escolhas = escolhas;
     this.personagem = personagem;
     this.deltaStamina = deltaStamina;
     this.input = input;
+    this.escolhas = new ArrayList<Escolha>();
     
 
 }    
@@ -36,36 +36,40 @@ void  mostrar()
   System.out.println(this.texto);
   this.personagem.deltaStamina(this.deltaStamina);
     
-  if(this.escolhas != null)
+  if(this.escolhas.size() > 0)
   {
-    for (String abacate : escolhas) 
+    for (Escolha abacate : escolhas) 
     {
-      System.out.println(abacate);
+      System.out.println(abacate.texto);
     }
+      int escolha3 = escolhendo();
+      this.escolhas.get(escolha3).proximo.mostrar();      
   }
 }
 
 int escolhendo()
 {
   int idEscolha = -1;
+
+
   if(escolhas != null)
   {     
+    while(idEscolha == -1)
+    {
+    
     System.out.println("Digite sua escolha: ");
+   
       String escolhaDigitada = input.nextLine();
 
-    for (int i = 0; i < escolhas.length; i++) {
-      if(escolhaDigitada.equals(escolhas[i]))
+    for (int i = 0; i < escolhas.size(); i++) {
+      if(escolhaDigitada.equals(escolhas.get(i).texto))
         {
           idEscolha = i;
         }
-       
-    }
-      int   idAtual = 0; 
-      
-    
+      }
+    }  
   }
-  
-  
+
   return idEscolha;   
 }
 
