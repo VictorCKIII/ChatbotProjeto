@@ -1,0 +1,9 @@
+CAPITULO
+NOME:
+O ENCONTRO 
+TEXTO: 
+Geralt o bruxo, estava voltando para a cidade após matar uma Banshee e acabou encontrando um duende. O duende faz a proposta de fazer várias perguntas a ele e se ele acabar acertando, ele ganha dinheiro, e sai do jogo, mas se ele perder, irá acabar lhe custando a vida. Geralt acaba aceitando o jogo do duende! A primeira pergunta do duende é a seguinte:  O que é preciso para matar uma bruxa ? 
+PERSONAGEM:
+Geralt
+VARIAÇÃO DE ENERGIA:
+25
