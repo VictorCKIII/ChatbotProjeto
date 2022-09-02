@@ -1,3 +1,4 @@
+
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -8,15 +9,26 @@ public class Main {
             Scanner input = new Scanner(System.in);
 
             LeitorCarregador leitor = new LeitorCarregador();
-            HashMap<String, PersoTest>  personagens = leitor.lerPersonagens("rsc/personagens.txt");
+            HashMap<String, PersoTest> personagens = leitor.lerPersonagens("rsc/personagens.txt");
 
+
+            
             PersoTest geralt = personagens.get("Geralt");
-           // PersoTest ciri = personagens.get("Ciri");
+            PersoTest ciri = personagens.get("Ciri");
         
-           HashMap<String, Capitulos>  capitulos = leitor.lerCapitulos("rsc/capitulos.txt",personagens,input);
+          
 
 
-            Capitulos cap1 = capitulos.get("O ENCONTRO");
+            Capitulos cap1 = new Capitulos("O encontro",
+                                "Geralt o bruxo, estava voltando para a cidade após matar uma Banshee e acabou encontrando um duende."+
+                                 "O duende faz a proposta de fazer várias perguntas a ele e se ele acabar acertando, ele ganha dinheiro, e sai do jogo"+
+                        "mas se ele perder, irá acabar lhe custando a vida. Geralt acaba aceitando o jogo do duende! "+
+                         "A primeira pergunta do duende é a seguinte: "+
+                        " O que é preciso para matar uma bruxa ?", 
+            geralt,
+            50,
+            input);
+           
                     
 
             Capitulos cap2 = new Capitulos("Banshees",
