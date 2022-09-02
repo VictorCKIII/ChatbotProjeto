@@ -3,6 +3,8 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import javax.print.DocFlavor.STRING;
+
 public class LeitorCarregador {
 
     HashMap<String, PersoTest> lerPersonagens(String caminhoArquivoPersonagens)
@@ -39,4 +41,53 @@ public class LeitorCarregador {
         }
             return personagens;
     }
+
+
+    HashMap<String, Capitulos> lerCapitulos(String caminhoArquivoCapitulos,
+    HashMap<String, PersoTest> personagens,
+     Scanner escanearConsole)
+    {
+        HashMap<String, Capitulos> capitulos = new HashMap<String, Capitulos>();
+        File arquivoCapitulos = new File(caminhoArquivoCapitulos);
+
+
+        try {
+           
+            Scanner escanearArquivoCapitulos = new Scanner(arquivoCapitulos,"UTF-8"); 
+            String nomeCapitulo = "";
+            String textoCapitulo = "";
+            String nomePerso = "";
+            int variacaoEnergia = 0;
+            String linhaScan = "";
+
+            while(escanearArquivoCapitulos.hasNextLine())
+            {
+                while(!linhaScan.equals("CAPITULO"))
+                {
+                 linhaScan = escanearArquivoCapitulos.nextLine();
+                 }
+                linhaScan = escanearArquivoCapitulos.nextLine(); //Nome 
+                nomeCapitulo = escanearArquivoCapitulos.nextLine();
+                linhaScan = escanearArquivoCapitulos.nextLine(); //TEXTO
+                textoCapitulo = escanearArquivoCapitulos.nextLine();
+                linhaScan = escanearArquivoCapitulos.nextLine(); // PERSONAGEM
+                nomePerso = escanearArquivoCapitulos.nextLine(); 
+                linhaScan = escanearArquivoCapitulos.nextLine(); //  Var Energia Cap
+                variacaoEnergia = Integer.parseInt(escanearArquivoCapitulos.nextLine());
+                 capitulos.put(nomeCapitulo, new Capitulos(nomeCapitulo,
+                                                        textoCapitulo,
+                                                        personagens.get(nomePerso),
+                                                         variacaoEnergia,
+                                                         escanearConsole));
+            }
+            escanearArquivoCapitulos.close();
+        
+        } 
+        catch (FileNotFoundException exception) {
+            
+            exception.printStackTrace();
+        }
+            return capitulos; 
+    }
+    
 }
