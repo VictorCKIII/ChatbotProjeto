@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -6,8 +7,11 @@ public class Main {
         public static void main(String[] args) {
             Scanner input = new Scanner(System.in);
 
-            PersoTest geralt = new PersoTest("Geralt", 0);
-            // PersoTest Ciri = new PersoTest("Ciri",50);
+            LeitorCarregador leitor = new LeitorCarregador();
+            HashMap<String, PersoTest>  personagens = leitor.lerPersonagens("rsc/personagens.txt");
+
+            PersoTest geralt = personagens.get("Geralt");
+           // PersoTest ciri = personagens.get("Ciri");
 
             Capitulos cap1 = new Capitulos("O encontro",
                     "Geralt o bruxo, estava voltando para a cidade após matar uma Banshee e acabou encontrando um duende."
