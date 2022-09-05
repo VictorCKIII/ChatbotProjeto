@@ -14,27 +14,22 @@ public class Main {
 
             
             PersoTest geralt = personagens.get("Geralt");
-            PersoTest ciri = personagens.get("Ciri");
+            //PersoTest ciri = personagens.get("Ciri");
 
-            HashMap<String, Capitulos> capitulos = leitor.lerCapitulos("rsc/capitulos.txt",
+            HashMap<String, Capitulos> capitulos = leitor.lerCapitulos("rsc/capii.txt",
                                                                          personagens,
                                                                         input);
         
           
 
 
-            Capitulos cap1 = capitulos.get("O ENCONTRO");
-                               
+            Capitulos cap1 = capitulos.get("ENCONTRO");
+
            
                     
 
-            Capitulos cap2 = new Capitulos("Banshees",
-                    "Agora, Geralt a pergunta será sobre Banshees" +
-                            "Para Geralt será fácil, ele acabou de voltar de uma caçada a Banshees" +
-                            "Qual é a comida preferida dos Banshees? ",
-                    geralt,
-                    25,
-                    input);
+            Capitulos cap2 = capitulos.get("BANSHEES");
+                    
 
             Capitulos cap3 = new Capitulos("Bruxos",
                     "Serei bondoso com você Geralt, aqui vai uma pergunta sobre sua raça" +
@@ -56,7 +51,7 @@ public class Main {
                     -100,
                     input);
 
-            cap1.escolhas.add(new Escolha("Cajado Sagrado", cap2));
+            //cap1.escolhas.add(new Escolha("Cajado Sagrado", cap2));
             cap1.escolhas.add(new Escolha("Grimorio", cap5));
             cap2.escolhas.add(new Escolha("Gado", cap5));
             cap2.escolhas.add(new Escolha("Camponeses", cap3));

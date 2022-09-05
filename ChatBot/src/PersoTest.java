@@ -15,11 +15,11 @@ public class PersoTest {
         
         if(varstamina > 0)
         {
-            System.out.println("Como decorrência desta ação," + this.nome + " Ganhou " + varstamina + " Pontos de Stamina");
+            System.out.println("..." + this.nome + " Ganhou " + varstamina + " Pontos de Stamina");
         }
         else 
         {
-            System.out.println("Como decorrência desta ação," + this.nome + " Perdeu" + varstamina + " Pontos de Stamina");
+            System.out.println("..." + this.nome + " Perdeu" + varstamina + " Pontos de Stamina");
         }
         if(this.stamina > 100){
             this.stamina = 100;

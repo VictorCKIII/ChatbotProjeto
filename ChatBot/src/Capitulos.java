@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.annotation.processing.SupportedOptions;
-import javax.print.DocFlavor.STRING;
-
 public class Capitulos {
 
     String nome;
@@ -31,10 +28,10 @@ public class Capitulos {
 }    
 void  mostrar()
 {
+  this.personagem.deltaStamina(this.deltaStamina);
   System.out.println("......");
   System.out.println(this.nome);
   System.out.println(this.texto);
-  this.personagem.deltaStamina(this.deltaStamina);
     
   if(this.escolhas.size() > 0)
   {
