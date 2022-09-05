@@ -6,7 +6,7 @@ Geralt o bruxo, estava voltando para a cidade após matar uma Banshee e acabou e
 PERSONAGEM:
 Geralt
 VARIAÇÃO DE ENERGIA:
-50
+20
 
 CAPITULO
 NOME:
@@ -16,7 +16,37 @@ Agora, Geralt a pergunta será sobre Banshees. Para Geralt será fácil, ele aca
 PERSONAGEM:
 Geralt
 VARIAÇÃO DE ENERGIA:
--25
+15
+
+CAPITULO
+NOME:
+BRUXOS
+TEXTO:
+Serei bondoso com você Geralt, aqui vai uma pergunta sobre sua raça. Qual a rua que os bruxos mais usam na estação do inverno ?
+PERSONAGEM:
+Geralt
+VARIAÇÃO DE ENERGIA:
+15
+
+CAPITULO
+NOME:
+GANHOU
+TEXTO:
+VOCÊ GANHOU! PARABÉNS.Tome aqui 100 moedas de ouro como recompensa!
+PERSONAGEM:
+Geralt
+VARIAÇÃO DE ENERGIA:
+100
+
+CAPITULO
+NOME:
+PERDEU
+TEXTO:
+RESPOSTA ERRADA !.Então, como consequência, você irá me pagar com sua vida !
+PERSONAGEM:
+Geralt
+VARIAÇÃO DE ENERGIA:
+-100
 
 ESCOLHA
 CAPITULO DE ORIGEM:
@@ -25,3 +55,43 @@ TEXTO:
 Cajado Sagrado
 CAPITULO DESTINO:
 BANSHEES
+
+ESCOLHA
+CAPITULO DE ORIGEM:
+ENCONTRO
+TEXTO:
+Grimorio
+CAPITULO DESTINO:
+PERDEU
+
+ESCOLHA
+CAPITULO DE ORIGEM:
+BANSHEES
+TEXTO:
+Camponeses
+CAPITULO DESTINO:
+BRUXOS
+
+ESCOLHA
+CAPITULO DE ORIGEM:
+BANSHEES
+TEXTO:
+Gado
+CAPITULO DESTINO:
+PERDEU
+
+ESCOLHA
+CAPITULO DE ORIGEM:
+BRUXOS
+TEXTO:
+Mana
+CAPITULO DESTINO:
+PERDEU
+
+ESCOLHA
+CAPITULO DE ORIGEM:
+BRUXOS
+TEXTO:
+Fogo
+CAPITULO DESTINO:
+PERDEU
