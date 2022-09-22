@@ -1,21 +1,21 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Capitulos {
 
-    String nome;
-    String texto;
-    ArrayList<Escolha> escolhas;
-    PersoTest personagem;
-    int deltaStamina;
-    Scanner input;
+    private  String nome;
+    private String texto;
+    private ArrayList<Escolha> escolhas;
+    private PersoTest personagem;
+    private int deltaStamina;
+    private Scanner input;
     
 
-  Capitulos(String nome,
+  public Capitulos(String nome,
            String texto,
         PersoTest personagem,
         int deltaStamina, Scanner input)
-
 {
     this.nome = nome ;
     this.texto =  texto;
@@ -26,7 +26,15 @@ public class Capitulos {
     
 
 }    
-void  mostrar()
+public Capitulos(HashMap<String, PersoTest> personagens, 
+Scanner escaneadorConsole,
+Scanner escaneadorArquivoCapitulos) 
+{
+  this.ler(personagens, escaneadorConsole, escaneadorArquivoCapitulos);
+  this.escolhas = new ArrayList<Escolha>();
+}
+
+public void  mostrar()
 {
   this.personagem.deltaStamina(this.deltaStamina);
   System.out.println("......");
@@ -37,14 +45,14 @@ void  mostrar()
   {
     for (Escolha abacate : escolhas) 
     {
-      System.out.println(abacate.texto);
+      System.out.println(abacate.getTexto());
     }
       int escolha3 = escolhendo();
-      this.escolhas.get(escolha3).proximo.mostrar();      
+      this.escolhas.get(escolha3).getProx().mostrar();      
   }
 }
 
-int escolhendo()
+private int escolhendo()
 {
   int idEscolha = -1;
 
@@ -59,7 +67,7 @@ int escolhendo()
       String escolhaDigitada = input.nextLine();
 
     for (int i = 0; i < escolhas.size(); i++) {
-      if(escolhaDigitada.equals(escolhas.get(i).texto))
+      if(escolhaDigitada.equals(escolhas.get(i).getTexto()))
         {
           idEscolha = i;
         }
@@ -69,6 +77,34 @@ int escolhendo()
 
   return idEscolha;   
 }
+  private void ler(HashMap<String, PersoTest> personagens, 
+                            Scanner escaneadorConsole, 
+                            Scanner escaneadorArquivoCapitulos) {
 
+      
+        String linhaEscaneada = "";
+
+        this.input = escaneadorConsole;
+        linhaEscaneada = escaneadorArquivoCapitulos.nextLine(); // Nome
+         this.nome = escaneadorArquivoCapitulos.nextLine();
+
+         linhaEscaneada = escaneadorArquivoCapitulos.nextLine(); // Texto
+         this.texto = escaneadorArquivoCapitulos.nextLine(); 
+
+         linhaEscaneada = escaneadorArquivoCapitulos.nextLine(); // Personagem
+         this.personagem = personagens.get(escaneadorArquivoCapitulos.nextLine()); 
+
+         linhaEscaneada = escaneadorArquivoCapitulos.nextLine(); // Variação De Energia
+         this.deltaStamina = Integer.parseInt(escaneadorArquivoCapitulos.nextLine());
+
+         }
+
+  public void adicionarEscolha(Escolha escolha)
+  {
+    this.escolhas.add(escolha);
+  }
+  public String getNome() {
+    return this.nome;
+  }
 }
 

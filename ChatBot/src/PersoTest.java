@@ -1,15 +1,15 @@
 
 public class PersoTest {
-    public String nome; 
-    public int stamina ;
+    private  String nome; 
+    private int stamina ;
 
-    PersoTest(String nome  , int stamina) 
+    public PersoTest(String nome  , int stamina) 
     {
         this.nome = nome;
         this.stamina = stamina;
     }
 
-    void deltaStamina(int varstamina)
+    public void deltaStamina(int varstamina)
     {
         this.stamina = this.stamina + varstamina;
         

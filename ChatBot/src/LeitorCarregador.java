@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class LeitorCarregador {
     
-    HashMap<String, PersoTest> lerPersonagens(String caminhoArquivoPersonagens)
+    public HashMap<String, PersoTest> lerPersonagens(String caminhoArquivoPersonagens)
     {
 
         HashMap<String, PersoTest> personagens = new HashMap<String, PersoTest>();
@@ -42,7 +42,7 @@ public class LeitorCarregador {
 
     }
 
-    HashMap<String, Capitulos> lerCapitulos(
+    public HashMap<String, Capitulos> lerCapitulos(
              String caminhoArquivoCapitulos,
              HashMap<String, PersoTest> personagens,
              Scanner escaneadorConsole)
@@ -65,10 +65,13 @@ public class LeitorCarregador {
 
                      if(linhaEscaneada.equals("CAPITULO"))
                      {
-                          lerCapitulo(personagens, 
-                                    escaneadorConsole, 
-                                    capitulos, 
-                                    escaneadorArquivoCapitulos);
+                        Capitulos capitulo = new Capitulos(
+                            personagens,
+                             escaneadorConsole, 
+                             escaneadorArquivoCapitulos);
+                    
+                        
+                        capitulos.put(capitulo.getNome(),capitulo);
                                     
                         linhaEscaneada = "";
                         }
@@ -90,32 +93,8 @@ public class LeitorCarregador {
         return capitulos;
 
     }
-
-    private void lerCapitulo(HashMap<String, PersoTest> personagens, 
-                            Scanner escaneadorConsole,
-                            HashMap<String, Capitulos> capitulos, 
-                            Scanner escaneadorArquivoCapitulos) {
-
-        String nomeCapitulo = "";
-        String textoCapitulo = "";
-        String nomePersonagem = "";
-        int variacaoEnergia = 0;
-        String linhaEscaneada = "";
-        linhaEscaneada = escaneadorArquivoCapitulos.nextLine(); // Nome
-         nomeCapitulo = escaneadorArquivoCapitulos.nextLine();
-         linhaEscaneada = escaneadorArquivoCapitulos.nextLine(); // Texto
-         textoCapitulo = escaneadorArquivoCapitulos.nextLine(); 
-         linhaEscaneada = escaneadorArquivoCapitulos.nextLine(); // Personagem
-         nomePersonagem = escaneadorArquivoCapitulos.nextLine(); 
-         linhaEscaneada = escaneadorArquivoCapitulos.nextLine(); // Variação De Energia
-         variacaoEnergia = Integer.parseInt(escaneadorArquivoCapitulos.nextLine()); 
-         capitulos.put(nomeCapitulo, new Capitulos(nomeCapitulo, 
-                                                   textoCapitulo, 
-                                                   personagens.get(nomePersonagem), 
-                                                   variacaoEnergia,
-                                                   escaneadorConsole));
                
-    }
+    
     private void lerEscolha(HashMap<String, Capitulos> capitulos, 
                             Scanner escaneadorArquivoCapitulos) {
         String nomeCapituloOrigem = "";
@@ -131,6 +110,6 @@ public class LeitorCarregador {
 
          Capitulos capituloOrigem = capitulos.get(nomeCapituloOrigem);
          Capitulos capituloDestino = capitulos.get(nomeCapituloDestino);
-        capituloOrigem.escolhas.add(new Escolha(textoEscolha, capituloDestino));
+        capituloOrigem.adicionarEscolha(new Escolha(textoEscolha, capituloDestino));
             }
 }
