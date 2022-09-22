@@ -1,4 +1,15 @@
-CAPITULO
+CAPITULO_COM_IMAGEM
+IMAGEM:
+  |`-._/\_.-`|
+  |    ||    |
+  |___o()o___|
+  |__((<>))__|
+  \   o\/o   /
+   \   ||   /
+    \  ||  /
+     '.||.'
+       ``
+FIM_DA_IMAGEM.
 NOME:
 ENCONTRO
 TEXTO:

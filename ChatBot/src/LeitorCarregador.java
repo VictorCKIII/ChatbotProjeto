@@ -56,12 +56,26 @@ public class LeitorCarregador {
 
              while(escaneadorArquivoCapitulos.hasNextLine())
              {
-                 while(!linhaEscaneada.equals("CAPITULO") && 
+                 while(!linhaEscaneada.equals("CAPITULO_COM_IMAGEM") && 
+                       !linhaEscaneada.equals("CAPITULO")  &&
                        !linhaEscaneada.equals("ESCOLHA"))
                  {
                      linhaEscaneada = escaneadorArquivoCapitulos.nextLine();
                      
                     }
+
+                    if(linhaEscaneada.equals("CAPITULO_COM_IMAGEM"))
+                     {
+                        CapituloImagem capitulo = new CapituloImagem(
+                            personagens,
+                             escaneadorConsole, 
+                             escaneadorArquivoCapitulos);
+                    
+                        
+                        capitulos.put(capitulo.getNome(),capitulo);
+                                    
+                        linhaEscaneada = "";
+                        }
 
                      if(linhaEscaneada.equals("CAPITULO"))
                      {

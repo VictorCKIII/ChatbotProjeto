@@ -6,11 +6,12 @@ public class Capitulos {
 
     private  String nome;
     private String texto;
-    private ArrayList<Escolha> escolhas;
+    protected ArrayList<Escolha> escolhas;
     private PersoTest personagem;
     private int deltaStamina;
     private Scanner input;
     
+    protected Capitulos() {}
 
   public Capitulos(String nome,
            String texto,
@@ -77,7 +78,7 @@ private int escolhendo()
 
   return idEscolha;   
 }
-  private void ler(HashMap<String, PersoTest> personagens, 
+  protected void ler(HashMap<String, PersoTest> personagens, 
                             Scanner escaneadorConsole, 
                             Scanner escaneadorArquivoCapitulos) {
 
