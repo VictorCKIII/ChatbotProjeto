@@ -9,17 +9,18 @@ public class PersoTest {
         this.stamina = stamina;
     }
 
-    public void deltaStamina(int varstamina)
+    public String deltaStamina(int varstamina)
     {
-        this.stamina = this.stamina + varstamina;
+        String resultado = "";
+
         
         if(varstamina > 0)
         {
-            System.out.println("..." + this.nome + " Ganhou " + varstamina + " Pontos de Stamina");
+           resultado = "..." + this.nome + " Ganhou " + varstamina + " Pontos de Stamina";
         }
         else 
         {
-            System.out.println("..." + this.nome + " Perdeu" + varstamina + " Pontos de Stamina");
+            resultado = "..." + this.nome + " Perdeu" + varstamina + " Pontos de Stamina";
         }
         if(this.stamina > 100){
             this.stamina = 100;
@@ -28,6 +29,8 @@ public class PersoTest {
             this.stamina = 0 ;
             System.out.println(this.nome);
         }
+           // resultado = resultado + "\n" + this.stamina + varstamina;
+        return resultado;
     }
     }
     

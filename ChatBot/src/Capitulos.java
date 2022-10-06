@@ -9,48 +9,29 @@ public class Capitulos {
     protected ArrayList<Escolha> escolhas;
     private PersoTest personagem;
     private int deltaStamina;
-    private Scanner input;
     
     protected Capitulos() {}
 
-  public Capitulos(String nome,
-           String texto,
+  public Capitulos(
+        String nome,
+        String texto,
         PersoTest personagem,
-        int deltaStamina, Scanner input)
+        int deltaStamina)
 {
     this.nome = nome ;
     this.texto =  texto;
     this.personagem = personagem;
     this.deltaStamina = deltaStamina;
-    this.input = input;
     this.escolhas = new ArrayList<Escolha>();
     
 
 }    
-public Capitulos(HashMap<String, PersoTest> personagens, 
-Scanner escaneadorConsole,
-Scanner escaneadorArquivoCapitulos) 
+public Capitulos(
+          HashMap<String, PersoTest> personagens, 
+            Scanner escaneadorArquivoCapitulos) 
 {
-  this.ler(personagens, escaneadorConsole, escaneadorArquivoCapitulos);
+  this.ler(personagens, escaneadorArquivoCapitulos);
   this.escolhas = new ArrayList<Escolha>();
-}
-
-public void  mostrar()
-{
-  this.personagem.deltaStamina(this.deltaStamina);
-  System.out.println("......");
-  System.out.println(this.nome);
-  System.out.println(this.texto);
-    
-  if(this.escolhas.size() > 0)
-  {
-    for (Escolha abacate : escolhas) 
-    {
-      System.out.println(abacate.getTexto());
-    }
-      int escolha3 = escolhendo();
-      this.escolhas.get(escolha3).getProx().mostrar();      
-  }
 }
 
 private int escolhendo()
@@ -65,27 +46,27 @@ private int escolhendo()
     
     System.out.println("Digite sua escolha: ");
    
-      String escolhaDigitada = input.nextLine();
+     // String escolhaDigitada = input.nextLine();
 
     for (int i = 0; i < escolhas.size(); i++) {
-      if(escolhaDigitada.equals(escolhas.get(i).getTexto()))
-        {
-          idEscolha = i;
-        }
+     //if(escolhaDigitada.equals(escolhas.get(i).getTexto()))
+      //  {
+      //    idEscolha = i;
+      //  }
       }
     }  
   }
 
   return idEscolha;   
 }
-  protected void ler(HashMap<String, PersoTest> personagens, 
-                            Scanner escaneadorConsole, 
-                            Scanner escaneadorArquivoCapitulos) {
+  protected void ler(
+              HashMap<String, PersoTest> personagens,  
+              Scanner escaneadorArquivoCapitulos) 
+  {
+        String linhaEscaneada;
 
-      
-        String linhaEscaneada = "";
+       // this.input = escaneadorConsole;
 
-        this.input = escaneadorConsole;
         linhaEscaneada = escaneadorArquivoCapitulos.nextLine(); // Nome
          this.nome = escaneadorArquivoCapitulos.nextLine();
 
@@ -107,5 +88,21 @@ private int escolhendo()
   public String getNome() {
     return this.nome;
   }
+
+  public String getTitulo() {
+    return null;
+  }
+
+public String getTexto() {
+    return this.texto;
+}
+
+public String alterarEnergiaPerso() {
+ return this.personagem.deltaStamina(this.deltaStamina);
+}
+
+public ArrayList<Escolha> getEscolhas() {
+  return this.escolhas;
+}
 }
 

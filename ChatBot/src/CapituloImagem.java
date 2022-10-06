@@ -11,28 +11,26 @@ public class CapituloImagem extends Capitulos
 
     public CapituloImagem(
         HashMap<String, PersoTest> personagens, 
-        Scanner escaneadorConsole,
         Scanner escaneadorArquivoCapitulos) 
 
 {
-        this.ler(personagens,escaneadorConsole, escaneadorArquivoCapitulos);
+        this.ler(personagens,escaneadorArquivoCapitulos);
         this.escolhas = new ArrayList<Escolha>();
 }
 
-    @Override
-    public void mostrar()
-    {
-        System.out.println();
-        System.out.println(imagem);
-        System.out.println();
-        super.mostrar();
-    }
+   // @Override
+   // public void mostrar()
+   // {
+   //     System.out.println();
+   //     System.out.println(imagem);
+   //     System.out.println();
+   //     super.mostrar();
+   // }
 
     @Override
     protected void ler(
-    HashMap<String, PersoTest> personagens, 
-    Scanner escaneadorConsole,
-    Scanner escaneadorArquivoCapitulos)
+                    HashMap<String, PersoTest> personagens,
+                    Scanner escaneadorArquivoCapitulos)
     {
         String linha = escaneadorArquivoCapitulos.nextLine(); //IMAGEM
         linha = escaneadorArquivoCapitulos.nextLine();
@@ -45,7 +43,7 @@ public class CapituloImagem extends Capitulos
             linha = escaneadorArquivoCapitulos.nextLine();
         }
 
-        super.ler(personagens, escaneadorConsole, escaneadorArquivoCapitulos);
+        super.ler(personagens, escaneadorArquivoCapitulos);
     }
     
 }

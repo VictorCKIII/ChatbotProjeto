@@ -2,50 +2,60 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Main {
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
-    public class App {
+
+public class Main extends Application  {
         public static void main(String[] args) {
-            Scanner input = new Scanner(System.in);
-
-            LeitorCarregador leitor = new LeitorCarregador();
-            HashMap<String, PersoTest> personagens = leitor.lerPersonagens("rsc/personagens.txt");
-
-
-            
-            PersoTest geralt = personagens.get("Geralt");
+          launch(args);             
+          
+            // PersoTest geralt = personagens.get("Geralt");
             //PersoTest ciri = personagens.get("Ciri");
-
-            HashMap<String, Capitulos> capitulos = leitor.lerCapitulos("rsc/capii.txt",
-                                                                         personagens,
-                                                                        input);
-        
+      
+           // Capitulos raiz = capitulos.get("ENCONTRO");                    
         
 
+         //   raiz.mostrar();
 
-            Capitulos raiz = capitulos.get("ENCONTRO");
-                    
-          // Capitulos cap2 = capitulos.get("BANSHEES");                  
-
-            //Capitulos cap3 = capitulos.get("BRUXOS");
-
-           // Capitulos cap4 = capitulos.get("GANHOU");
-
-          //  Capitulos cap5 = capitulos.get("PERDEU");
-
-            //cap1.escolhas.add(new Escolha("Cajado Sagrado", cap2));
-            //cap1.escolhas.add(new Escolha("Grimorio", cap5));
-            //cap2.escolhas.add(new Escolha("Gado", cap5));
-            //cap2.escolhas.add(new Escolha("Camponeses", cap3));
-            //cap3.escolhas.add(new Escolha("Mana", cap5));
-            //cap3.escolhas.add(new Escolha("Fogo", cap4));
-
-           
-            raiz.mostrar();
-
-            input.close();
 
         }
-    }
+
+        @Override
+        public void start(Stage arg0) throws Exception {
+          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("screen.fxml"));
+          Parent parent = fxmlLoader.load();
+          Scene scene = new Scene(parent);
+
+          arg0.setTitle("Olá Manito");
+          arg0.setScene(scene);
+          arg0.show();
+
+
+         //arg0.setTitle("Titulo");
+         //Button botao = new Button("Clique");
+         //botao.setOnAction(new EventHandler<ActionEvent>() {
+
+         // @Override
+         // public void handle(ActionEvent arg0) {
+         //   System.out.println("Paertou");
+         // }
+          
+       //  });
+        // StackPane root = new StackPane();
+        //  root.getChildren().addAll(botao);
+        // arg0.setScene(new Scene(root,300,250));
+        // arg0.show(); 
+        }
+     
+  
 
 }

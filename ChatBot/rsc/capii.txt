@@ -13,47 +13,113 @@ FIM_DA_IMAGEM.
 NOME:
 ENCONTRO
 TEXTO:
-Geralt o bruxo, estava voltando para a cidade após matar uma Banshee e acabou encontrando um duende. O duende faz a proposta de fazer várias perguntas a ele e se ele acabar acertando, ele ganha dinheiro, e sai do jogo, mas se ele perder, irá acabar lhe custando a vida. Geralt acaba aceitando o jogo do duende! A primeira pergunta do duende é a seguinte:  O que é preciso para matar uma bruxa ? 
+CAPITULO 1: Geralt o bruxo, estava voltando para a cidade após matar uma Banshee e acabou encontrando um duende. O duende faz a proposta de fazer várias perguntas a ele e se ele acabar acertando, ele ganha dinheiro, e sai do jogo, mas se ele perder, irá acabar lhe custando a vida. Geralt acaba aceitando o jogo do duende! A primeira pergunta do duende é a seguinte:  O que é preciso para matar uma bruxa ? 
 PERSONAGEM:
 Geralt
 VARIAÇÃO DE ENERGIA:
 20
 
-CAPITULO
+CAPITULO_COM_IMAGEM
+IMAGEM:
+|`-._/\_.-`|
+|    ||    |
+|___o()o___|
+|__((<>))__|
+\   o\/o   /
+ \   ||   /
+  \  ||  /
+   '.||.'
+     ``
+FIM_DA_IMAGEM.
 NOME:
 BANSHEES
 TEXTO:
-Agora, Geralt a pergunta será sobre Banshees. Para Geralt será fácil, ele acabou de voltar de uma caçada a Banshees. Qual é a comida preferida dos Banshees?
+CAPITULO 2: Agora, Geralt a pergunta será sobre Banshees. Para Geralt será fácil, ele acabou de voltar de uma caçada a Banshees. Qual é a comida preferida dos Banshees?
 PERSONAGEM:
 Geralt
 VARIAÇÃO DE ENERGIA:
 15
 
-CAPITULO
+CAPITULO_COM_IMAGEM
+IMAGEM:
+a@@@@@@@@a  a@@@@@@a  a@@@@@@@a a@@@@@@@@a a@@a.  .a@@a  a@@a 
+@@@@  @@@@ @@@@  @@@@ @@@@  @@@ @@@@@@@@@@ @@@@a  a@@@@  @@@@ 
+@@@@  @@@@ @@@@  @@@@ @@@@  @@@    @@@@    `@@@@  @@@@'  @@@@ 
+@@@@@@@@@@ @@@@@@@@@@ @@@@@@@@'    @@@@      `@@@@@@'    @@@@ 
+@@@@@@@@@' @@@@@@@@@@ @@@@@@@@a    @@@@        @@@@      `@@' 
+@@@@       @@@@  @@@@ @@@@ @@@@    @@@@        @@@@ 
+@@@@       @@@@  @@@@ @@@@ @@@@    @@@@        @@@@       @@
+FIM_DA_IMAGEM.
 NOME:
 BRUXOS
 TEXTO:
-Serei bondoso com você Geralt, aqui vai uma pergunta sobre sua raça. Qual a rua que os bruxos mais usam na estação do inverno ?
+CAPITULO 3: Serei bondoso com você Geralt, aqui vai uma pergunta sobre sua raça. Qual a rua que os bruxos mais usam na estação do inverno ?
 PERSONAGEM:
 Geralt
 VARIAÇÃO DE ENERGIA:
 15
 
-CAPITULO
+CAPITULO_COM_IMAGEM
+IMAGEM:
+  ______________________________
+ / \                             \.
+|   |          VOCÊ VENCEU!      |.
+ \_ |                            |.
+    |   MEUS PARABÉNS            |.
+    |   E OBRIGADO POR JOGAR     |.
+    |                            |.
+    |                            |.
+    |                            |.
+    |                            |.
+    |                            |.
+    |                            |.
+    |                            |.
+    |                            |.
+    |                            |.
+    |                            |.
+    |   _________________________|___
+    |  /                            /.
+    \_/dc__________________________/.
+FIM_DA_IMAGEM.
 NOME:
 GANHOU
 TEXTO:
-VOCÊ GANHOU! PARABÉNS.Tome aqui 100 moedas de ouro como recompensa!
+CAPITULO FINAL: VOCÊ GANHOU! PARABÉNS.Tome aqui 100 moedas de ouro como recompensa!
 PERSONAGEM:
 Geralt
 VARIAÇÃO DE ENERGIA:
 100
 
-CAPITULO
+CAPITULO_COM_IMAGEM
+IMAGEM:
+|____________|_
+   ||--------|| | _________
+   ||- _     || |(HA ha ha!)
+   ||    - _ || | ---------
+   ||       -|| |     //
+   ||        || O\    __
+   ||        ||  \\  (..)
+   ||        ||   \\_|  |_
+   ||        ||    \  \/  )
+   ||        ||     :    :|
+   ||        ||     :    :|
+   ||        ||     :====:O
+   ||        ||     (    )
+   ||__@@@@__||     | `' |
+   || @|..|@ ||     | || |
+   ||O@`=='@O||     | || |
+   ||_@\/\/@_||     |_||_|
+ ----------------   '_'`_`
+/________________\----------\
+|   GUILLOTINE   |-----------|
+|  OF CASTLE DE SADE         |
+|____________________________|
+Just trying to get a head!!!
+FIM_DA_IMAGEM.
 NOME:
 PERDEU
 TEXTO:
-RESPOSTA ERRADA !.Então, como consequência, você irá me pagar com sua vida !
+CAPITULO FINAL: RESPOSTA ERRADA !.Então, como consequência, você irá me pagar com sua vida !
 PERSONAGEM:
 Geralt
 VARIAÇÃO DE ENERGIA:

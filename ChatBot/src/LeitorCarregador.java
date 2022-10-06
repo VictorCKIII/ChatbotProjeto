@@ -43,9 +43,8 @@ public class LeitorCarregador {
     }
 
     public HashMap<String, Capitulos> lerCapitulos(
-             String caminhoArquivoCapitulos,
-             HashMap<String, PersoTest> personagens,
-             Scanner escaneadorConsole)
+             String caminhoArquivoCapitulos,    
+             HashMap<String, PersoTest> personagens)
     {
         HashMap<String, Capitulos> capitulos = new HashMap<String, Capitulos>();
         File arquivoCapitulos = new File(caminhoArquivoCapitulos);
@@ -68,7 +67,6 @@ public class LeitorCarregador {
                      {
                         CapituloImagem capitulo = new CapituloImagem(
                             personagens,
-                             escaneadorConsole, 
                              escaneadorArquivoCapitulos);
                     
                         
@@ -80,8 +78,7 @@ public class LeitorCarregador {
                      if(linhaEscaneada.equals("CAPITULO"))
                      {
                         Capitulos capitulo = new Capitulos(
-                            personagens,
-                             escaneadorConsole, 
+                            personagens,    
                              escaneadorArquivoCapitulos);
                     
                         
